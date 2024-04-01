@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { Download, Send } from 'lucide-react';
@@ -13,16 +15,36 @@ import {
 import DevImg from './DevImg';
 import Badge from './Badge';
 import Socials from './Socials';
+import TxtAnimation from './TxtAnimation';
 
 function Hero() {
+  const handleDownload = async () => {
+    const response = await fetch('/api/download');
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Sorin-Craciunescu-CV.pdf';
+    link.click();
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
-    <section className='py-12 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom dark:bg-none bg-cover'>
+    <section className='py-12 xs:mb-48 xl:mb-2 sm:mb-2 xl:py-24 h-[84vh] xl:pt-28 bg-hero bg-no-repeat bg-bottom dark:bg-none bg-cover'>
       <div className='container mx-auto'>
         <div className='flex justify-between gap-x-8'>
           {/* text */}
           <div className='flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left'>
             <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>
-              Web Developer
+              <TxtAnimation
+                strArray={[
+                  'Web Developer',
+                  'Web Designer',
+                  'UI/UX Designer',
+                  'React Developer',
+                  'MERN Stack Developer'
+                ]}
+              />
             </div>
             <h1 className='h1 mb-4 '>Hello 👋🏼 My name is Sorin Craciunescu</h1>
             <p className='subtitle max-w-[490px] mx-auto xl:mx-0'>
@@ -40,7 +62,11 @@ function Hero() {
                   Contact me <Send size={18} />
                 </Button>
               </Link>
-              <Button variant='secondary' className='gap-x-2'>
+              <Button
+                variant='secondary'
+                className='gap-x-2 border-2'
+                onClick={handleDownload}
+              >
                 Download CV <Download size={18} />
               </Button>
             </div>
@@ -75,7 +101,7 @@ function Hero() {
             />
             <div className='bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2 '></div>
             <DevImg
-              containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom'
+              containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom  '
               imgSrc='/hero/developer.png'
             />
           </div>

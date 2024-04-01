@@ -14,6 +14,7 @@ module.exports = {
       padding: '2rem'
     },
     screens: {
+      xs: '390px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -56,6 +57,11 @@ module.exports = {
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
+        },
+        badge: {
+          JS: 'hsl(var(--javascript))',
+          React: 'hsl(var(--react))',
+          Fullstack: 'hsl(var(--fullstack))'
         }
       },
       borderRadius: {
@@ -85,7 +91,11 @@ module.exports = {
         about_shape_light: 'url(/about/shape-light.svg)',
         about_shape_dark: 'url(/about/shape-dark.svg)',
         dots_light: 'url(/dots-light.svg)',
-        dots_dark: 'url(/dots-dark.svg)'
+        dots_dark: 'url(/dots-dark.svg)',
+        work_project_bg_light: 'url(/work/project-bg-light.png)',
+        work_project_bg_dark: 'url(/work/project-bg-dark.png)',
+        contact_ilustration_light: 'url(/contact/illustration-light.svg)',
+        contact_ilustration_dark: 'url(/contact/illustration-dark.svg)'
       }
     }
   },

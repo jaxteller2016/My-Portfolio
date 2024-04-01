@@ -27,8 +27,8 @@
       --accent-foreground: 222.2 47.4% 11.2%;
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 210 40% 98%;
-      --border: 221.2 81.8% 61.4%;
-      /* 214.3 31.8% 91.4%; */
+      --border: 214.3 31.8% 91.4%;
+      /* 221.2 81.8% 61.4%; */
       /* 8 82% 92%; */
       --input: 221.2 81.8% 61.4%;
       /* 8 82% 92%; */
@@ -37,6 +37,9 @@
       /* 9 99% 67%; */
       /* 221.2 83.2% 53.3%; */
       --radius: 0.5rem;
+      --javascript: 53 87% 53%;
+      --fullstack: 218 65% 53%;
+      --react: 195 87% 30%;
     }
 
     .dark {
@@ -71,12 +74,14 @@
       /* 210 40% 98%; */
       --border: 221.2 81.8% 61.4%;
       /* 237 22% 23%; */
-      /* 217.2 32.6% 17.5%; */
       --input: 221.2 81.8% 61.4%;
       /* 237 22% 23%; */
       /* 217.2 32.6% 17.5%; */
-      --ring: 8 99% 67%;
-      /* 224.3 76.3% 48%; */
+      --ring: 224.3 76.3% 48%;
+      /* 8 99% 67%; */
+      --javascript: 53 87% 53%;
+      --fullstack: 218 65% 53%;
+      --react: 195 87% 30%;
     }
   }
 }
@@ -116,4 +121,28 @@
 
 .section-title {
   @apply text-4xl font-bold relative w-max flex items-center justify-between gap-x-3 before:bg-dots_light before:dark:bg-dots_dark before:bg-no-repeat before:bg-center before:w-[24px] before:h-[24px];
+}
+
+/* swiper bullets styles */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-primary rounded-full;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.txt-rotate > .wrap {
+  border-right: 0.08em solid #f6f5f5;
+}
+
+.light .txt-rotate > .wrap {
+  border-right: 0.08em solid #333;
 }

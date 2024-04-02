@@ -64,8 +64,18 @@ const initValues = {
 const initState = { values: initValues, isLoading: false, error: '' };
 
 function ContactForm() {
+  type State = {
+    values: {
+      name: string;
+      email: string;
+      message: string;
+    };
+    isLoading: boolean;
+    error: string;
+  };
+
   const { toast } = useToast();
-  const [state, setState] = useState(initState);
+  const [state, setState] = useState<State>(initState);
   const { values, isLoading, error } = state;
 
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>

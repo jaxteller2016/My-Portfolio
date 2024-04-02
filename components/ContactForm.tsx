@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button.tsx';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import {
@@ -26,6 +26,12 @@ import {
 } from '@/components/ui/form';
 import { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
+import { PropsWithChildren } from 'react';
+
+declare module '@/components/ui/form' {
+  export interface FormItem extends PropsWithChildren {}
+  export interface FormControl extends PropsWithChildren {}
+}
 
 // Define form schema.
 const formSchema = z.object({
@@ -134,81 +140,101 @@ function ContactForm() {
           control={form.control}
           name='name'
           render={({ field }: { field: any }) => (
-            <FormItem>
-              <FormControl>
-                {/* input */}
-                <div className='relative flex items-center'>
-                  <Input
-                    type='name'
-                    id='name'
-                    placeholder='Your Full Name'
-                    value={values.name}
-                    onChange={handleChange}
-                    {...field}
-                  />
-                  <User
-                    className='absolute'
-                    style={{ right: 1.5 + 'rem' }}
-                    size={20}
-                  />
+            // <FormItem>
+            // <FormControl>
+            <>
+              <div>
+                <div>
+                  {/* input */}
+                  <div className='relative flex items-center'>
+                    <Input
+                      type='name'
+                      id='name'
+                      placeholder='Your Full Name'
+                      value={values.name}
+                      onChange={handleChange}
+                      {...field}
+                    />
+                    <User
+                      className='absolute'
+                      style={{ right: 1.5 + 'rem' }}
+                      size={20}
+                    />
+                  </div>
                 </div>
-              </FormControl>
+              </div>
+
+              {/* </FormControl> */}
               <FormMessage />
-            </FormItem>
+              {/* </FormItem> */}
+            </>
           )}
         />
         <FormField
           control={form.control}
           name='email'
           render={({ field }: { field: any }) => (
-            <FormItem>
-              <FormControl>
-                {/* input */}
-                <div className='relative flex items-center'>
-                  <Input
-                    type='email'
-                    id='email'
-                    placeholder='Your E-mail address'
-                    value={values.email}
-                    onChange={handleChange}
-                    {...field}
-                  />
-                  <MailIcon
-                    className='absolute'
-                    style={{ right: 1.5 + 'rem' }}
-                    size={20}
-                  />
+            // <FormItem>
+            // <FormControl>
+            <>
+              <div>
+                <div>
+                  {/* input */}
+                  <div className='relative flex items-center'>
+                    <Input
+                      type='email'
+                      id='email'
+                      placeholder='Your E-mail address'
+                      value={values.email}
+                      onChange={handleChange}
+                      {...field}
+                    />
+                    <MailIcon
+                      className='absolute'
+                      style={{ right: 1.5 + 'rem' }}
+                      size={20}
+                    />
+                  </div>
                 </div>
-              </FormControl>
+              </div>
+
+              {/* </FormControl> */}
               <FormMessage />
-            </FormItem>
+            </>
+            // </FormItem>
           )}
         />
         <FormField
           control={form.control}
           name='message'
           render={({ field }: { field: any }) => (
-            <FormItem>
-              <FormControl>
-                {/* input */}
-                <div className='relative flex items-center'>
-                  <Textarea
-                    type='message'
-                    id='message'
-                    placeholder='Your Message'
-                    value={values.message}
-                    onChange={handleChange}
-                    {...field}
-                  />
-                  <MessageSquare
-                    className='absolute top-4'
-                    style={{ right: 1.5 + 'rem' }}
-                    size={20}
-                  />
+            // <FormItem>
+            // <FormControl>
+            <>
+              <div>
+                <div>
+                  {/* input */}
+                  <div className='relative flex items-center'>
+                    <Textarea
+                      type='message'
+                      id='message'
+                      placeholder='Your Message'
+                      value={values.message}
+                      onChange={handleChange}
+                      {...field}
+                    />
+                    <MessageSquare
+                      className='absolute top-4'
+                      style={{ right: 1.5 + 'rem' }}
+                      size={20}
+                    />
+                  </div>
                 </div>
-              </FormControl>
+              </div>
+              {/* </FormControl> */}
               <FormMessage />
-            </FormItem>
+              {/* </FormItem> */}
+            </>
           )}
         />
         <Button
@@ -216,7 +242,6 @@ function ContactForm() {
           type='submit'
           style={{ maxWidth: 166 + 'px' }}
           disabled={form.formState.isSubmitting}
-          // disabled
         >
           {isLoading && (
             <Loader2

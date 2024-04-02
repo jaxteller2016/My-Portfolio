@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from './ui/button';
+import { Button } from './ui/button.tsx';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 import { useTheme } from 'next-themes';
 

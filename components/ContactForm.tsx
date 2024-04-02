@@ -61,14 +61,14 @@ const initValues = {
   message: ''
 };
 
-const initState = { values: initValues };
+const initState = { values: initValues, isLoading: false, error: '' };
 
 function ContactForm() {
   const { toast } = useToast();
   const [state, setState] = useState(initState);
   const { values, isLoading, error } = state;
 
-  const handleChange = ({ target }) =>
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
     setState((prev) => ({
       ...prev,
       values: { ...prev.values, [target.name]: target.value }
@@ -224,24 +224,6 @@ function ContactForm() {
       </form>
     </Form>
   );
-}
-
-{
-  /* input
-        <div className='relative flex items-center'>
-          <Input type='name' id='name' placeholder='Your Full Name' />
-          <User className='absolute right-6' size={20} />
-        </div>
-        {/* input 
-        <div className='relative flex items-center'>
-          <Input type='email' id='email' placeholder='Your E-mail' />
-          <MailIcon className='absolute right-6' size={20} />
-        </div>
-        {/* input
-        <div className='relative flex items-center'>
-          <Textarea type='message' id='message' placeholder='Your Message' />
-          <MessageSquare className='absolute top-4 right-6' size={20} />
-        </div> */
 }
 
 export default ContactForm;

@@ -82,29 +82,27 @@ function Hero() {
             <Badge
               containerStyles='absolute top-[4%] -left-[5rem]'
               icon={<RiBriefcase4Fill />}
-              endCountNum={3}
+              endCountNum={7}
               badgeText='Years Of Experience'
             />
             {/* badge 2 */}
             <Badge
               containerStyles='absolute top-[60%] -left-[1rem]'
               icon={<RiTodoFill />}
-              endCountNum={34}
+              endCountNum={54}
               badgeText='Finnished Projects'
             />
             {/* badge 3 */}
             <Badge
               containerStyles='absolute top-[35%] -right-[5rem]'
               icon={<RiTeamFill />}
-              endCountNum={28}
+              endCountNum={48}
               badgeText='Happy Clients'
             />
             <div className='bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2 '></div>
             <DevImg
-              containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom  '
-              //imgSrc='/hero/developer.png'
-              //imgSrc='/hero/sorin-hero.png'
-              imgSrc='/hero/sorin-hero-filters.png'
+              containerStyles='bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom'
+              imgSrc='/hero/sorin-hero.png'
             />
           </div>
         </div>

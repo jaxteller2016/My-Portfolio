@@ -18,7 +18,9 @@ function Contact() {
             </div>
             <h1 className='h1 max-w-md mb-8'>
               Let&apos;s&nbsp;
-              <TxtAnimation strArray={['Work', 'Build', 'Create']} />
+              <TxtAnimation
+                strArray={['Work', 'Build', 'Create', 'Code', 'Develop']}
+              />
               <br />
               Toghether
             </h1>

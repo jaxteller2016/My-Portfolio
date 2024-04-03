@@ -353,14 +353,19 @@ function About() {
                               <Image
                                 src={imagePath}
                                 alt='tool'
-                                width={48}
-                                height={48}
-                                className={
-                                  imagePath === '/about/nextjs.svg' ||
-                                  imagePath === '/about/remix.svg'
-                                    ? 'dark:invert'
-                                    : ''
-                                }
+                                // width={48}
+                                // height={48}
+                                width='0'
+                                height='0'
+                                className={`
+                                 ${
+                                   imagePath === '/about/nextjs.svg' ||
+                                   imagePath === '/about/remix.svg'
+                                     ? 'dark:invert'
+                                     : ''
+                                 }
+                                    w-[48px] h-auto`}
+                                sizes='(max-width: 48px) 100vw, 48px'
                                 priority
                               />
                             </div>

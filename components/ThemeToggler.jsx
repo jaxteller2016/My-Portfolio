@@ -10,6 +10,7 @@ function ThemeToggler() {
     <div>
       <Button
         variant='outline'
+        className='px-3 py-3 rounded-full dark:bg-gray-800 dark:text-gray-100 transition-all'
         size='icon'
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       >

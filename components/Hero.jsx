@@ -58,13 +58,13 @@ function Hero() {
             {/* buttons */}
             <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12'>
               <Link href='/contact'>
-                <Button className='gap-x-2'>
+                <Button className='gap-x-2 px-5'>
                   Contact me <Send size={18} />
                 </Button>
               </Link>
               <Button
                 variant='secondary'
-                className='gap-x-2 border-2'
+                className='gap-x-2 border-2 px-3'
                 onClick={handleDownload}
               >
                 Download CV <Download size={18} />
@@ -82,7 +82,7 @@ function Hero() {
             <Badge
               containerStyles='absolute top-[4%] -left-[5rem]'
               icon={<RiBriefcase4Fill />}
-              endCountNum={7}
+              endCountNum={4}
               badgeText='Years Of Experience'
             />
             {/* badge 2 */}

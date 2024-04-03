@@ -6,6 +6,7 @@ import MobileNav from './MobileNav';
 import Nav from './Nav';
 import ThemeToggler from './ThemeToggler';
 import { useEffect, useState } from 'react';
+import { Button } from './ui/button';
 
 function Header() {
   // eslint-disable-next-line no-unused-vars
@@ -41,7 +42,7 @@ function Header() {
             />
             <ThemeToggler />
             {/* mobile nav */}
-            <div className='xl:hidden'>
+            <div className='xl:hidden inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 px-3 py-3 rounded-full dark:bg-gray-800 dark:text-gray-100 transition-all border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10'>
               <MobileNav />
             </div>
           </div>

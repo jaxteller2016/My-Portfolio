@@ -34,7 +34,7 @@ function Work() {
             artistry of modern web development.
           </p>
           <Link href='/projects'>
-            <Button>All Projects</Button>
+            <Button className='px-5'>All Projects</Button>
           </Link>
         </div>
         {/* slider */}

@@ -10,7 +10,7 @@ function Cta() {
             Prepered to turn your ideas into reality? I&#39;m here to help
           </h2>
           <Link href='/contact'>
-            <Button>Get in touch</Button>
+            <Button className='px-5'>Get in touch</Button>
           </Link>
         </div>
       </div>

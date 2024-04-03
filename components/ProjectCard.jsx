@@ -18,10 +18,13 @@ function ProjectCard({ project }) {
         {/* image */}
         <div className='relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:dark:bg-work_project_bg_dark xl:bg-[110%] xl:bg-no-repeat overflow-hidden'>
           <Image
-            className='absolute bottom-10 shadow-2xl'
+            className='absolute bottom-10 shadow-2xl rounded-xl w-[400px] h-auto'
             src={project.image}
-            width={400}
-            height={350}
+            width='0'
+            // width={400}
+            // height={350}
+            height='0'
+            sizes='(max-width: 400px) 100vw, 400px'
             alt='Project Image'
             priority
           />

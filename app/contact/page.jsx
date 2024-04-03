@@ -22,7 +22,7 @@ function Contact() {
                 strArray={['Work', 'Build', 'Create', 'Code', 'Develop']}
               />
               <br />
-              Toghether
+              Together
             </h1>
             <p className='subtitle max-w-[400px]'>
               Ready to turn your web development vision into reality? Let&apos;s
